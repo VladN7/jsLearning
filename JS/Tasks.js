@@ -20,9 +20,6 @@ const library = {
   ]
 };
 
-console.log(library.books[1]);
-
-
 
 const RevisoroDescription = {
   name: 'Revisoro',
@@ -49,6 +46,7 @@ array[10] = 156;
 // Enter property
 const enteredProp = 'age';
 console.log(obj[enteredProp]);
+console.log(library.books[1]);
 console.log('Does Vlad has GF?', obj.hasGf);
 console.log('Is Vlad Working?',  obj.isWorking);
 //console.log(array);
