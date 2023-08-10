@@ -50,3 +50,8 @@ console.log(library.books[1]);
 console.log('Does Vlad has GF?', obj.hasGf);
 console.log('Is Vlad Working?',  obj.isWorking);
 //console.log(array);
+
+console.log(50 !== 250);
+console.log(50 ==='50');
+console.log(50 == '50');
+
