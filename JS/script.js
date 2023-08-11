@@ -98,12 +98,58 @@ console.log(50 !== 250);
 console.log(50 ==='50');
 console.log(50 == '50');
 
+/* Задание на урок:
+
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
+
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
+
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате:
+    movies: {
+        'logan': '8.1'
+    }
+
+Проверить, чтобы все работало без ошибок в консоли */
 
 
 
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?');
 
 
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: { },
+  actors: { },
+  genres: [ ],
+  privat: false
+};
 
+const askAboutMovies = {
+
+  askMovieA: prompt('Один из последних просмотренных фильмов?', ''),
+  askMovieRatingA: prompt('На сколько оцените его?', ''),
+  askMovieB: prompt('Один из последних просмотренных фильмов?', ''),
+  askMovieRatingB: prompt('На сколько оцените его?', '')
+
+};
+
+personalMovieDB.movies[askAboutMovies.askMovieA] = askAboutMovies.askMovieRatingA;
+personalMovieDB.movies[askAboutMovies.askMovieB] = askAboutMovies.askMovieRatingB;
+
+console.log(personalMovieDB);
+*/
+
+// ----------------------------------------------------------------- //
 
 
 const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?');
