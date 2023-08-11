@@ -1,57 +1,25 @@
-const library = {
-  name: 'Nemesis',
-  genres: ['Detective', 'Fun', 'Sports'],
-  locations: ['Den Haag', 'Rotterdam', 'Delft'],
-  isFree: true,
-  books: [
-    {
-      title: 'The Expanse',
-      price: '250',
-      isBestseller: true,
-      genre: 'Fun',
-      publishYear: 2022
-    },
-    {
-      title: 'No Sorrow',
-      price: '300',
-      isBestseller: false,
-      publishYear: 2017
+
+/* Задание на урок:
+
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
+
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
+
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате:
+    movies: {
+        'logan': '8.1'
     }
-  ]
-};
 
+Проверить, чтобы все работало без ошибок в консоли */
 
-const RevisoroDescription = {
-  name: 'Revisoro',
-  budget: 10000,
-  employees: ['John', 'Sergio', 'Nancy'],
-  isOpen: true,
-  products: {
-    'Pasta': 200,
-    'Sushi': 800
-  }
-};
-
-console.log(RevisoroDescription);
-
-const obj = {
-  name: 'Vlad',
-  age: 18,
-  isWorking: true
-};
-obj.hasGf = true;
-
-const array = [1, 'Vlad', true, {date: 21}];
-array[10] = 156;
-// Enter property
-const enteredProp = 'age';
-console.log(obj[enteredProp]);
-console.log(library.books[1]);
-console.log('Does Vlad has GF?', obj.hasGf);
-console.log('Is Vlad Working?',  obj.isWorking);
-//console.log(array);
-
-console.log(50 !== 250);
-console.log(50 ==='50');
-console.log(50 == '50');
 
