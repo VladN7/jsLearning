@@ -5,7 +5,10 @@ Welcome to my JavaScript Learning Repository! Here, I chronicle my journey of le
 ## 📘 Repository Blueprint
 
 - **Lesson Files**: These files represent the key learnings, examples, and exercises from my lessons.
-  - 📁 `nestedCycles_labels.js`
+  - 📁 `lessons/`
 
 - **Homework Files**: To reinforce and practice what I've learned, I complete homework assignments and commit them here for review.
-  - 📁 `homework_2.js`
+  - 📁 `homework/`
+    
+- **Personal notes Files**: This file contains my personal notes from the lessons.
+  - 📁 `personal_notes/`
