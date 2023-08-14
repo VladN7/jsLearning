@@ -26,3 +26,18 @@ for (let n = 5; n <= 10; n++) {
   arrayOfNumbers.push(n);
   console.log(arrayOfNumbers[n-5]);
 }
+
+const lines = 5;
+let doc = '';
+
+for (let i = 0; i <= lines; i++) {
+  for (let j = 0; j < lines - i; j++) {
+    doc += ' ';
+  }
+  for (let j = 0; j < 2 * i + 1; j++) {
+    doc += '*';
+  }
+  doc += '\n';
+}
+
+console.log(doc);

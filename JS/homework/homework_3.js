@@ -48,5 +48,3 @@ for (let l = 0; l <= pyramidHeight; l++) {
 }
 
 console.log(pyramid);
-
-

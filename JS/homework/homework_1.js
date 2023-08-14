@@ -8,6 +8,7 @@ const personalMovieDB = {
   private: false
 };
 
+
 const askAboutMovies = {
   askMovieA: prompt('Один из последних просмотренных фильмов?', ''),
   askMovieRatingA: prompt('На сколько оцените его?', ''),

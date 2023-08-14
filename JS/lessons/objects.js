@@ -20,7 +20,6 @@ const library = {
   ]
 };
 
-
 const RevisoroDescription = {
   name: 'Revisoro',
   budget: 10000,
@@ -33,25 +32,3 @@ const RevisoroDescription = {
 };
 
 console.log(RevisoroDescription);
-
-const obj = {
-  name: 'Vlad',
-  age: 18,
-  isWorking: true
-};
-obj.hasGf = true;
-
-const array = [1, 'Vlad', true, {date: 21}];
-array[10] = 156;
-// Enter property
-const enteredProp = 'age';
-console.log(obj[enteredProp]);
-console.log(library.books[1]);
-console.log('Does Vlad has GF?', obj.hasGf);
-console.log('Is Vlad Working?',  obj.isWorking);
-//console.log(array);
-
-console.log(50 !== 250);
-console.log(50 ==='50');
-console.log(50 == '50');
-
