@@ -1,4 +1,16 @@
-// Pyramid pattern
+/*
+ * JavaScript Patterns Lesson
+ * File: patterns.js
+ */
+
+// Helper function for section headers
+function sectionHeader(title) {
+  console.log(`\n===== ${title} =====`);
+}
+
+// 1. Pyramid Pattern Creation
+sectionHeader('1. Pyramid Pattern Creation');
+
 const pyramidHeight = 5;
 let pyramid = '';
 for (let l = 0; l <= pyramidHeight; l++) {
@@ -11,4 +23,3 @@ for (let l = 0; l <= pyramidHeight; l++) {
   pyramid += '\n';
 }
 console.log(pyramid);
-

@@ -14,18 +14,23 @@
 
 5) (моё) Проверить, что пользователь ввел корректные данные
 
+6) (моё) Заменить на функции
 */
-
 'use strict';
 
-const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
-if (numberOfFilms === null || numberOfFilms.length > 50 || numberOfFilms === '' || numberOfFilms <= 0) {
-  console.log('count typeof error');
-} else if (typeof numberOfFilms === 'number') {
-  console.log('count success');
+function getNumberOfFilms() {
+  let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+
+  if (numberOfFilms === null || numberOfFilms === '' || isNaN(+numberOfFilms) || +numberOfFilms <= 0) {
+    console.log('count typeof error');
+  } else {
+    console.log('count success');
+  }
+  return +numberOfFilms;
 }
 
-const personalMovieDB = {
+let numberOfFilms = getNumberOfFilms();
+let personalMovieDB = {
   count: numberOfFilms,
   movies: {},
   actors: {},
@@ -33,60 +38,55 @@ const personalMovieDB = {
   private: false
 };
 
-for (let i = 0; i < 2; i++) {
-  let movie = prompt('Один из последних просмотренных фильмов?', ''),
-    rating = prompt('На сколько оцените его?', '');
-  if (movie === null || movie === undefined || movie === '' || movie.length > 50 || rating === null || rating === undefined || rating === '' || rating.length > 50 || rating <= 0) {
-    i--;
-    console.log('answer type error');
+function declarePrompts() {
+  return {
+    moviePrompt: prompt('Один из последних просмотренных фильмов?', ''),
+    ratingPrompt: prompt('На сколько оцените его?', '')
+  };
+}
+
+function getPersonalMovieDB() {
+  let movies = {};
+
+  for (let i = 0, retries = 0; i < 2;) {
+    let moviePrompts = declarePrompts();
+    let movie = moviePrompts.moviePrompt,
+      rating = moviePrompts.ratingPrompt;
+
+    if (movie === null || movie === '' || movie.length > 50 ||
+      rating === null || rating === '' || rating.length > 50 || isNaN(+rating) || +rating <= 0) {
+      retries++;
+      console.log('answer type error');
+      if (retries >= 3) {
+        console.log('Too many invalid inputs. Exiting');
+        break;
+      }
+    } else {
+      movies[movie] = rating;
+      console.log('...done');
+      i++;
+    }
+  }
+  return {
+    ...personalMovieDB,
+    movies: movies,
+  };
+}
+function getCountMessage() {
+  let countMessage = '';
+  if (personalMovieDB.count > 0 && personalMovieDB.count < 10) {
+    countMessage = 'Просмотрено довольно мало фильмов';
+  } else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
+    countMessage = 'Вы классический зритель';
+  } else if (personalMovieDB.count >= 30) {
+    countMessage = 'Вы киноман';
   } else {
-    personalMovieDB.movies[movie] = rating;
-    console.log('...done');
+    countMessage = 'Вы не ввели количество просмотренных фильмов';
   }
+  console.log(countMessage);
+  return countMessage;
 }
 
-if (personalMovieDB.count > 0 && personalMovieDB.count < 10) {
-  console.log('Просмотрено довольно мало фильмов');
-} else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
-  console.log('Вы классический зритель');
-} else if (personalMovieDB.count >= 30) {
-  console.log('Вы киноман');
-} else if (typeof personalMovieDB.count === 'string'|| personalMovieDB.count === null || personalMovieDB.count <= 0 || personalMovieDB.count === '') {
-  console.log('Вы не ввели количество просмотренных фильмов');
-} else {
-  console.log('Произошла ошибка');
-}
-
+personalMovieDB = getPersonalMovieDB();
 console.log(personalMovieDB);
-
-/* Rework needed in practice 3 lesson add func
-
- // 2nd way
-
-let k = 0;
-while (k < 2) {
-  let movie = prompt('Один из последних просмотренных фильмов?', ''),
-    rating = prompt('На сколько оцените его?', '');
-
-  if (movie === null || movie === '' || movie.length > 50 || rating === null || rating === '' || rating.length > 50) {
-i--;
-  }   else {
-    personalMovieDB.movies[movie] = rating;
-  }
-   k++;
-}
-
-// 3rd way
-
-let j = 0;
-do {let movie = prompt('Один из последних просмотренных фильмов?', ''),
-  rating = prompt('На сколько оцените его?', '');
-if (movie === null || movie === '' || movie.length > 50 || rating === null || rating === '' || rating.length > 50) {
-  j--;
-} else {
-  personalMovieDB.movies[movie] = rating;
-}
-  j++;
-}
-while (j < 2);
-*/
+getCountMessage();

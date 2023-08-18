@@ -1,6 +1,18 @@
+/*
+ * JavaScript Nested Cycles & Labels Lesson
+ * File: nestedCycles_labels.js
+ */
+
+// Helper function for section headers
+function sectionHeader(title) {
+  console.log(`\n===== ${title} =====`);
+}
+
+// 1. Nested Loops for Pattern Creation
+sectionHeader('1. Nested Loops for Pattern Creation');
+
 let result = '';
 const length = 7;
-
 for (let i = 1; i < length; i++) {
   for (let j = 0; j < i; j++) {
     if (i === length - 1 && j === length - 1) break;
@@ -9,6 +21,9 @@ for (let i = 1; i < length; i++) {
   result += '\n';
 }
 console.log(result);
+
+// 2. Nested Loops with Labels
+sectionHeader('2. Nested Loops with Labels');
 
 first: for (let i = 0; i < 3; i++) {
   console.log(`First level: ${i}`);
@@ -20,4 +35,3 @@ first: for (let i = 0; i < 3; i++) {
     }
   }
 }
-

@@ -1,3 +1,8 @@
+/*
+ * JavaScript Homework 3
+ * Description: Array manipulations and patterns.
+ */
+
 function firstTask() {
 
   const arr = [3, 5, 8, 16, 20, 23, 50];
@@ -30,7 +35,7 @@ function thirdTask() {
   for (let i = data.length - 1; i >= 0; i--) {
     result.push(data[i]);
   }
-
+  console.log(result);
   return result;
 }
 // Pyramid pattern
@@ -46,5 +51,12 @@ for (let l = 0; l <= pyramidHeight; l++) {
   }
   pyramid += '\n';
 }
-
+firstTask();
+secondTask();
+thirdTask();
 console.log(pyramid);
+
+/*
+[YOUR_FEEDBACK_GOES_HERE]
+ */
+

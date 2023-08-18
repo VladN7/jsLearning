@@ -1,22 +1,39 @@
-const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?');
+/*
+ * JavaScript Homework 1
+ * Description: Basic user interactions and object population.
+ */
 
-const personalMovieDB = {
-  count: numberOfFilms,
+// User inputs number of films watched
+const filmsWatched = prompt('Сколько фильмов вы уже посмотрели?');
+
+// Initial movie database object
+const movieDB = {
+  count: filmsWatched,
   movies: {},
   actors: {},
   genres: [],
   private: false
 };
 
-
-const askAboutMovies = {
-  askMovieA: prompt('Один из последних просмотренных фильмов?', ''),
-  askMovieRatingA: prompt('На сколько оцените его?', ''),
-  askMovieB: prompt('Один из последних просмотренных фильмов?', ''),
-  askMovieRatingB: prompt('На сколько оцените его?', '')
+// User provides details about two movies
+const firstMovie = {
+  name: prompt('Один из последних просмотренных фильмов?', ''),
+  rating: prompt('На сколько оцените его?', '')
+};
+const secondMovie = {
+  name: prompt('Один из последних просмотренных фильмов?', ''),
+  rating: prompt('На сколько оцените его?', '')
 };
 
-personalMovieDB.movies[askAboutMovies.askMovieA] = askAboutMovies.askMovieRatingA;
-personalMovieDB.movies[askAboutMovies.askMovieB] = askAboutMovies.askMovieRatingB;
+// Populating movie details into movie database
+movieDB.movies[firstMovie.name] = firstMovie.rating;
+movieDB.movies[secondMovie.name] = secondMovie.rating;
 
-console.log(personalMovieDB);
+// Display the populated movie database
+console.log(movieDB);
+
+// Feedback:
+
+/*
+[YOUR_FEEDBACK_GOES_HERE]
+ */
