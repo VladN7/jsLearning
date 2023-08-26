@@ -44,7 +44,9 @@ getCoupeNumber('Hello')  => "Ошибка. Проверьте правильно
 
  */
 'use strict';
+
 // 1)
+
 function calculateVolumeAndArea (length) {
   if (typeof length !== 'number' || length <= 0 || length % 1 !== 0) {
     console.log('При вычислении произошла ошибка');
@@ -59,16 +61,15 @@ function calculateVolumeAndArea (length) {
 console.log(calculateVolumeAndArea(5));
 
 // 2)
-function getCoupeNumber (seatNumber) {
+function getCoupeNumber(seatNumber) {
   if (typeof seatNumber !== 'number' || seatNumber <= 0 || seatNumber > 36) {
     return 'Ошибка. Проверьте правильность введенного номера места';
   }
-  let coupeNumber = Math.ceil(seatNumber / 4);
-  return coupeNumber;
+  return Math.ceil(seatNumber / 4);
 }
+
 //Change the argument to test the function
-console.log(getCoupeNumber(8));
-getCoupeNumber();
+console.log(getCoupeNumber(33));
 
 // Coding exercise 8
 
@@ -94,18 +95,13 @@ getTimeFromMinutes(0) => "Это 0 часов и 0 минут"
 
 getTimeFromMinutes(-150) => "Ошибка, проверьте данные"
 
+1.1) (мое) добавить новую функцию getNewTimeFromMinutes для отображения в формате 8 часов 30 минут 15 секунд и улучшить
+в моем понимании код предыдущей функции getTimeFromMinutes в моей функции getNewTimeFromMinutes
+
 2) Напишите функцию, которая принимает в себя 4 числа и возвращает самое большее из них.
  Если один из аргументов не является числом или их меньше 4 - возвращается 0. Дробные числа разрешены.
-
-3) (мое) Добавить секунды в функцию getTimeFromMinutes
-
-Пример:
-
-findMaxNumber(1, 5, 6.6, 11); =>  11
-
-findMaxNumber(1, 5, '6', '10');  =>  0
-
  */
+
 //1)
 
 function getTimeFromMinutes (minutes) {
@@ -114,26 +110,67 @@ function getTimeFromMinutes (minutes) {
   }
   let hours = Math.floor(minutes / 60);
   let minutesLeft = minutes % 60;
-  let seconds = Math.floor(minutesLeft * 60);
   if (hours === 0) {
-    return `Это 0 часов и ${minutesLeft} минут или ${seconds} секунд`;
+    return `Это 0 часов и ${minutesLeft} минут`;
   }
   if (hours === 1) {
-    return `Это 1 час и ${minutesLeft} минут или ${seconds} секунд`;
+    return `Это 1 час и ${minutesLeft} минут`;
   }
   if (hours > 1 && hours < 5) {
-    return `Это ${hours} часа и ${minutesLeft} минут или ${seconds} секунд`;
+    return `Это ${hours} часа и ${minutesLeft} минут`;
   }
   if (hours >= 5 && hours <= 10) {
-    return `Это ${hours} часов и ${minutesLeft} минут или ${seconds} секунд`;
+    return `Это ${hours} часов и ${minutesLeft } минут`;
   }
   if (hours > 10) {
-    return `Это ${hours} часов и ${minutesLeft} минут или ${seconds} секунд`;
+    return `Это ${hours} часов и ${minutesLeft} минут`;
   }
 }
 //Change the argument to test the function
 console.log(getTimeFromMinutes(150));
 getTimeFromMinutes();
+
+//1.1)
+
+function getWordForm(number, forms) {
+  if (number === 1) return forms[0];
+  if (number > 1 && number < 5) return forms[1];
+  return forms[2];
+}
+
+function writeTimeWords(hours, minutesLeft, seconds) {
+  const hourWord = getWordForm(hours, ['час', 'часа', 'часов']);
+  const minuteWord = getWordForm(minutesLeft, ['минута', 'минуты', 'минут']);
+  const secondWord = getWordForm(seconds, ['секунда', 'секунды', 'секунд']);
+  return { hourWord, minuteWord, secondWord };
+}
+
+function getNewTimeFromMinutes(newMinutes) {
+  if (typeof newMinutes !== 'number' || newMinutes < 0 || newMinutes > 600) {
+    return 'Ошибка, проверьте данные';
+  }
+
+  const hours = Math.floor(newMinutes / 60);
+  const minutesLeft = Math.floor(newMinutes % 60);
+  const seconds = Math.ceil((newMinutes % 1) * 60);
+
+  const { hourWord, minuteWord, secondWord } = writeTimeWords(hours, minutesLeft, seconds);
+
+  let result = `Это ${hours} ${hourWord}`;
+
+  if (minutesLeft > 0) {
+    result += `, ${minutesLeft} ${minuteWord}`;
+  }
+
+  if (seconds > 0) {
+    result += ` и ${seconds} ${secondWord}`;
+  }
+
+  return result;
+}
+
+// Adjust the argument to test the function
+console.log(getNewTimeFromMinutes(185.365));  // Should return "Это 4 часа, 5 минут и 52 секунд"
 
 //2)
 
@@ -141,8 +178,8 @@ function findMaxNumber (num1, num2, num3, num4) {
   if (typeof num1 !== 'number' || typeof num2 !== 'number' || typeof num3 !== 'number' || typeof num4 !== 'number') {
     return 0;
   }
-  let maxNumber = Math.max(num1, num2, num3, num4);
-  return maxNumber;
+  Math.max(num1, num2, num3, num4);
+  return Math.max(num1, num2, num3, num4);
 }
 //Change the argument to test the function
 console.log(findMaxNumber(1, 5, 6.6, 11));
@@ -178,6 +215,5 @@ function fib(num) {
   }
 }
 //Change the argument to test the function
-console.log(fib(1));
-
-
+console.log(fib(4));
+fib();
