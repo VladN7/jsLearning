@@ -38,7 +38,7 @@ P.S.S. Это классическая функция-модификатор, к
 
 function sayHello() {
   let name = 'Антон';
-  return `Привет, ${name}!`;
+  return 'Привет, ${name}!';
 }
 // Место для задачи 2)
 function returnNeighboringNumbers() {

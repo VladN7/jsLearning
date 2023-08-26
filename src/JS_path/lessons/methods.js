@@ -1,7 +1,7 @@
 /*
  * JavaScript Methods Lesson
  * File: methods.js
- * Description: A comprehensive guide to understanding functions in JavaScript.
+ * Description: A comprehensive guide to understanding methods in JavaScript.
  */
 
 // Helper function to display section headers

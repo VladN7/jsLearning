@@ -15,6 +15,15 @@
 5) (моё) Проверить, что пользователь ввел корректные данные
 
 6) (моё) Заменить на функции
+
+Задание практики №3
+
+7) Создать функцию showMyDB, которая будет проверять свойство private. Если стоит в позиции
+false - выводит в консоль главный объект программы
+
+8) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
 */
 'use strict';
 
@@ -46,8 +55,6 @@ function declarePrompts() {
 }
 
 function getPersonalMovieDB() {
-  let movies = {};
-
   for (let i = 0, retries = 0; i < 2;) {
     let moviePrompts = declarePrompts();
     let movie = moviePrompts.moviePrompt,
@@ -62,31 +69,43 @@ function getPersonalMovieDB() {
         break;
       }
     } else {
-      movies[movie] = rating;
+      personalMovieDB.movies[movie] = rating;
       console.log('...done');
       i++;
     }
   }
-  return {
-    ...personalMovieDB,
-    movies: movies,
-  };
-}
-function getCountMessage() {
-  let countMessage = '';
-  if (personalMovieDB.count > 0 && personalMovieDB.count < 10) {
-    countMessage = 'Просмотрено довольно мало фильмов';
-  } else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
-    countMessage = 'Вы классический зритель';
-  } else if (personalMovieDB.count >= 30) {
-    countMessage = 'Вы киноман';
-  } else {
-    countMessage = 'Вы не ввели количество просмотренных фильмов';
-  }
-  console.log(countMessage);
-  return countMessage;
 }
 
-personalMovieDB = getPersonalMovieDB();
-console.log(personalMovieDB);
+function writeYourGenres() {
+  for (let i = 0; i < 3; i++) {
+    let genre = prompt(`Ваш любимый жанр под номером ${i + 1}`, '');
+    if (genre !== null && genre !== '' && isNaN(+genre)) {
+      personalMovieDB.genres[i] = genre;
+    } else {
+      i--;
+    }
+  }
+}
+
+function showMyDB() {
+  if (!personalMovieDB.private) {
+    console.log(personalMovieDB);
+  }
+}
+
+function getCountMessage() {
+  if (personalMovieDB.count < 10) {
+    console.log('Просмотрено довольно мало фильмов');
+  } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    console.log('Вы классический зритель');
+  } else if (personalMovieDB.count >= 30) {
+    console.log('Вы киноман');
+  } else {
+    console.log('Произошла ошибка');
+  }
+}
+
+getPersonalMovieDB();
 getCountMessage();
+writeYourGenres();
+showMyDB();
