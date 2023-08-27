@@ -16,7 +16,7 @@
 
 6) (mine) Replace with functions
 
-  Practice task #3
+Practice task #3
 
 7) Create a function showMyDB, which will check the private property. If it is in position
 false - displays the main program object in the console

@@ -130,7 +130,7 @@ function getTimeFromMinutes (minutes) {
 console.log(getTimeFromMinutes(150));
 getTimeFromMinutes();
 
-//1.1)
+//1.1) (my version)
 
 function getWordForm(number, forms) {
   if (number === 1) return forms[0];
@@ -149,28 +149,23 @@ function getNewTimeFromMinutes(newMinutes) {
   if (typeof newMinutes !== 'number' || newMinutes < 0 || newMinutes > 600) {
     return 'Ошибка, проверьте данные';
   }
-
   const hours = Math.floor(newMinutes / 60);
   const minutesLeft = Math.floor(newMinutes % 60);
   const seconds = Math.ceil((newMinutes % 1) * 60);
-
   const { hourWord, minuteWord, secondWord } = writeTimeWords(hours, minutesLeft, seconds);
-
   let result = `Это ${hours} ${hourWord}`;
 
   if (minutesLeft > 0) {
     result += `, ${minutesLeft} ${minuteWord}`;
   }
-
   if (seconds > 0) {
     result += ` и ${seconds} ${secondWord}`;
   }
-
   return result;
 }
 
 // Adjust the argument to test the function
-console.log(getNewTimeFromMinutes(185.365));  // Should return "Это 4 часа, 5 минут и 52 секунд"
+console.log(getNewTimeFromMinutes(185.365));
 
 //2)
 
@@ -202,10 +197,8 @@ function fib(num) {
   if (typeof num !== 'number' || num <= 0 || num % 1 !== 0) {
     return '';
   }
-
   if (num === 1) {
     return '0';
-
   } else {
     let arr = [0, 1];
     for (let i = 2; i < num; i++) {
