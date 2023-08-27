@@ -35,13 +35,16 @@ function multiply(a, b) {
 }
 console.log(`4 * 5 = ${multiply(4, 5)}`);
 
-// 5. Callback Functions
+// 5. Callback Functions !!!IMPORTANT!!!
 sectionHeader('5. Callback Functions');
-function process(callback) {
-  const data = '12345';
-  callback(data);
+function learnJS(lang, callback) {
+  console.log(`I am learning ${lang}`);
+  callback();
 }
-process(data => console.log(`Processed Data: ${data}`));
+function done() {
+  console.log('Lesson finished');
+}
+learnJS('JavaScript', done);
 
 // 6. Closure
 sectionHeader('6. Closure');
