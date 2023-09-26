@@ -59,7 +59,7 @@ sectionHeader('7. Type Operators');
 console.log('typeof "Hello":', typeof 'Hello');
 
 // 8. Spread and Rest Operators
-sectionHeader('8. Spread and Rest Operators');
+sectionHeader('8. Spread and Rest Operators VERY IMPORTANT');
 const arr1 = [1, 2, 3];
 const arr2 = [...arr1, 4, 5];
 console.log('Spread in Arrays:', arr2);

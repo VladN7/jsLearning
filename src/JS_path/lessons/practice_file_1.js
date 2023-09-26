@@ -1,4 +1,4 @@
-/* Task for this practice on phase 1:
+/* Tasks for the practice file #1
 
 1) Automate the questions to the user about the movies using a loop
 

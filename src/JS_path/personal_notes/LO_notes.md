@@ -38,3 +38,4 @@ Used to assign values to variables.
 - The `==` operator will perform type coercion if the variables are not of the same type, while `===` (strict equality) will not perform type coercion.
 - Operator precedence determines the way in which operators are parsed concerning each other. Operators with higher precedence become the operands of operators with lower precedence.
 
+Передача по ссылке или по значению, Spread оператор, Rest параметры.
