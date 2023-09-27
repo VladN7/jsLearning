@@ -1,12 +1,9 @@
+import {sectionHeader} from '../utils.js';
+
 /*
  * JavaScript Control Flow Lesson
  * File: control_flow.js
  */
-
-// Helper function for section headers
-function sectionHeader(title) {
-  console.log(`\n===== ${title} =====`);
-}
 
 // 1. Loop Control with Break
 sectionHeader('1. Loop Control with Break');

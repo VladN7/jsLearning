@@ -1,13 +1,10 @@
+import {sectionHeader} from '../utils.js';
+
 /*
  * JavaScript Methods Lesson
  * File: methods.js
  * Description: A comprehensive guide to understanding methods in JavaScript.
  */
-
-// Helper function to display section headers
-function sectionHeader(title) {
-  console.log(`\n===== ${title} =====`);
-}
 
 // 1. String Methods
 sectionHeader('1. String Methods');

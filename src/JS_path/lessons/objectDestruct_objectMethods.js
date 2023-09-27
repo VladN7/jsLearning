@@ -1,15 +1,10 @@
+import {sectionHeader} from '../utils.js';
+
 /*
  * JavaScript Object Destructurization Lesson
  * File: objectDestructurization.js
  * Description: A comprehensive guide to understanding object destructurization in JavaScript.
  */
-
-// Helper function to display section headers
-function sectionHeader(title) {
-  console.log(`\n===== ${title} =====`);
-}
-
-// Object Destructurization Lesson
 sectionHeader('Object Destructurization Lesson');
 const options = {
   name: 'test',

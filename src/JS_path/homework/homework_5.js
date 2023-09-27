@@ -104,8 +104,8 @@ getTimeFromMinutes(-150) => "Ошибка, проверьте данные"
 
 //1)
 
-function getTimeFromMinutes (minutes) {
-  if (typeof minutes !== 'number' || minutes < 0 || minutes % 1 !== 0 || minutes > 600) {
+function convertMinutesToShortTime (minutes) {
+  if (typeof minutes !== 'number' || minutes < 0 || minutes % 1 !== 0) {
     return 'Ошибка, проверьте данные';
   }
   let hours = Math.floor(minutes / 60);
@@ -127,8 +127,8 @@ function getTimeFromMinutes (minutes) {
   }
 }
 //Change the argument to test the function
-console.log(getTimeFromMinutes(150));
-getTimeFromMinutes();
+console.log(convertMinutesToShortTime(625));
+convertMinutesToShortTime();
 
 //1.1) (my version)
 
@@ -145,8 +145,8 @@ function writeTimeWords(hours, minutesLeft, seconds) {
   return { hourWord, minuteWord, secondWord };
 }
 
-function getNewTimeFromMinutes(newMinutes) {
-  if (typeof newMinutes !== 'number' || newMinutes < 0 || newMinutes > 600) {
+function convertMinutesToFullTime(newMinutes) {
+  if (typeof newMinutes !== 'number' || newMinutes < 0) {
     return 'Ошибка, проверьте данные';
   }
   const hours = Math.floor(newMinutes / 60);
@@ -165,7 +165,7 @@ function getNewTimeFromMinutes(newMinutes) {
 }
 
 // Adjust the argument to test the function
-console.log(getNewTimeFromMinutes(185.365));
+console.log(convertMinutesToFullTime(437.56));
 
 //2)
 

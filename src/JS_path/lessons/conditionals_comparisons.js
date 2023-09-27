@@ -1,12 +1,9 @@
+import {sectionHeader} from '../utils.js';
+
 /*
  * JavaScript Conditionals & Comparisons Lesson
  * File: conditionals_comparisons.js
  */
-
-// Helper function for section headers
-function sectionHeader(title) {
-  console.log(`\n===== ${title} =====`);
-}
 
 // 1. Basic Comparisons
 sectionHeader('1. Basic Comparisons');

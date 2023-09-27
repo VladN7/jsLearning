@@ -1,13 +1,10 @@
+import {sectionHeader} from '../utils.js';
+
 /*
  * JavaScript Operators Lesson
  * File: operators.js
  * Description: A comprehensive guide to understanding various operators in JavaScript.
  */
-
-// Helper function to display section headers
-function sectionHeader(title) {
-  console.log(`\n===== ${title} =====`);
-}
 
 // 1. Arithmetic Operators
 sectionHeader('1. Arithmetic Operators');

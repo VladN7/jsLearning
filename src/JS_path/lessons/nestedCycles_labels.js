@@ -1,12 +1,8 @@
+import {sectionHeader} from '../utils.js';
 /*
  * JavaScript Nested Cycles & Labels Lesson
  * File: nestedCycles_labels.js
  */
-
-// Helper function for section headers
-function sectionHeader(title) {
-  console.log(`\n===== ${title} =====`);
-}
 
 // 1. Nested Loops for Pattern Creation
 sectionHeader('1. Nested Loops for Pattern Creation');
