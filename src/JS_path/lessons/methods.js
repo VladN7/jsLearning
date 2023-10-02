@@ -6,8 +6,6 @@ import {sectionHeader, sectionLog} from '../utils.js';
  * Description: A comprehensive guide to understanding methods in JavaScript.
  */
 
-sectionHeader('1. String Methods');
-
 function stringMethods() {
   const str = 'Hello!';
   sectionLog('String Operations', {
@@ -25,7 +23,6 @@ function stringMethods() {
 }
 stringMethods();
 
-sectionHeader('2. Number Methods');
 function numberMethods() {
   const num = 42.23;
   const test = '137.2px';
@@ -42,12 +39,10 @@ function numberMethods() {
 }
 numberMethods();
 
-sectionHeader('3. Array Methods');
-
 function arrayMethods() {
   const arr = [1, 2, 3, 4, 5];
   const arr2 = [6, 7, 8, 9, 10];
-  
+
   sectionLog('Array Operations', {
     'Push operation': arr.push(6),
     'Pop operation': arr.pop(),
@@ -65,5 +60,3 @@ function arrayMethods() {
   });
 }
 arrayMethods();
-
-// ... (rest of the sections and code remain the same)
