@@ -50,7 +50,7 @@ let personalMovieDB = {
     let numberOfFilms = prompt('How many films have you watched?', '').trim();
 
     if (numberOfFilms === null || numberOfFilms === '' || isNaN(+numberOfFilms) || +numberOfFilms <= 0) {
-      console.log('NumberOfFilms typeof error');
+      console.error('NumberOfFilms typeof error');
     } else {
       console.log('Films count success');
       this.count = +numberOfFilms;
@@ -71,7 +71,7 @@ let personalMovieDB = {
       if (movie === null || movie === '' || movie.length > 50 ||
         rating === null || rating === '' || rating.length > 50 || isNaN(+rating) || +rating <= 0) {
         retries++;
-        console.log('MovieDB input type error');
+        console.error('MovieDB input type error');
         if (retries >= 3) {
           console.log('Too many invalid inputs. Exiting...');
           break;
@@ -85,12 +85,13 @@ let personalMovieDB = {
   },
   writeYourGenres: function () {
     for (let i = 0; i < 3; i++) {
-      let genre = prompt(`Your favourite genre #${i + 1}`, '');
+      let genre = prompt(`Your favourite genre #${i + 1}`, '').trim();
       if (genre !== null && genre !== '' && isNaN(+genre)) {
         personalMovieDB.genres[i] = genre;
+        personalMovieDB.genres.sort();
       } else {
         i--;
-        console.log('Genre input error');
+        console.error('Genre input error');
       }
     }
   },
@@ -107,7 +108,7 @@ let personalMovieDB = {
     } else if (personalMovieDB.count >= 30) {
       console.log('You are a movie fan');
     } else {
-      console.log('countMessage error');
+      console.error('countMessage error');
     }
   },
   toggleVisibleMyDB: function () {
