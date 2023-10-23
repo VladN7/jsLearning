@@ -32,7 +32,7 @@ export function varTypeCheck(...variables) {
   });
 }
 
-Array.prototype.quickSort = function() {
+Array.prototype.quickSort = function(propName) {
   if (this.length <= 1) {
     return [...this];
   }
@@ -42,16 +42,21 @@ Array.prototype.quickSort = function() {
 
   for (let i = 1; i < this.length; i++) {
     let comparison;
-    if (isObject) {
-      comparison = String(this[i].name).localeCompare(String(p.name));
+    if (isObject && propName) {
+      comparison = String(this[i][propName]).localeCompare(String(p[propName]));
+    } else if (isObject) {
+      const firstKey = Object.keys(this[i])[0];
+      comparison = String(this[i][firstKey]).localeCompare(String(p[firstKey]));
     } else {
       comparison = String(this[i]).localeCompare(String(p));
     }
+
     if (comparison < 0) {
       a.push(this[i]);
     } else {
       b.push(this[i]);
     }
   }
-  return [...a.quickSort(), p, ...b.quickSort()];
+
+  return [...a.quickSort(propName), p, ...b.quickSort(propName)];
 };

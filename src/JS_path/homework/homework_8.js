@@ -57,9 +57,13 @@ function transferWaiters(data) {
   const { waiters } = data;
   const copiedWaiters = waiters.map(waiter => ({ ...waiter }));
   return copiedWaiters.quickSort();
-  // Look in utils.js, used inheritance (of course with a little help of AI)
-  // but I knew it was possible!!!
 }
+// Try return copiedWaiters.quickSort('age')
+// Or copiedWaiters.quickSort('name')
+// Or copiedWaiters.quickSort('age', 'name')
+// Look in utils.js, used inheritance (of course with a little help of AI)
+// but I knew it was possible!!!
+
 
 
 sectionLog('Debug assignment', {
