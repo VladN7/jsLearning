@@ -35,7 +35,7 @@ const restaurantData = {
     }
   ],
   waiters: [
-    {name: 'Alice', age: 22}, {name: 'John', age: 24}
+    {name: 'Alice', age: 22},{name: 'Peter', age: 18}, {name: 'John', age: 24}, {name: 'Stew', age: 41}, {name: 'Mike', age: 32}
   ],
 
   averageLunchPrice: '20$',
@@ -55,8 +55,12 @@ function isAverageLunchPriceTrue(data, firstDish, secondDish) {
 
 function transferWaiters(data) {
   const { waiters } = data;
-  return waiters.map(waiter => ({...waiter}));
+  const copiedWaiters = waiters.map(waiter => ({ ...waiter }));
+  return copiedWaiters.quickSort();
+  // Look in utils.js, used inheritance (of course with a little help of AI)
+  // but I knew it was possible!!!
 }
+
 
 sectionLog('Debug assignment', {
   'isOpen': isOpen(restaurantData),

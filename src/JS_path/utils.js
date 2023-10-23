@@ -31,18 +31,27 @@ export function varTypeCheck(...variables) {
     console.log(`Variable ${index + 1}: Type - ${type}, Value - ${value}`);
   });
 }
-export function quickSort(A) {
-  if (A.length === 0) {
-    return [];
+
+Array.prototype.quickSort = function() {
+  if (this.length <= 1) {
+    return [...this];
   }
-  if (A.length === 1) {
-    return A;
-  } else {
-    let a = [], b = [], p = A[0];
-    for (let i = 1; i < A.length; i++) {
-      if (A[i] < p) a.push(A[i]);
-      else b.push(A[i]);
+
+  let a = [], b = [], p = this[0];
+  const isObject = typeof p === 'object' && p !== null;
+
+  for (let i = 1; i < this.length; i++) {
+    let comparison;
+    if (isObject) {
+      comparison = String(this[i].name).localeCompare(String(p.name));
+    } else {
+      comparison = String(this[i]).localeCompare(String(p));
     }
-    return quickSort(a).concat(p, quickSort(b));
+    if (comparison < 0) {
+      a.push(this[i]);
+    } else {
+      b.push(this[i]);
+    }
   }
-}
+  return [...a.quickSort(), p, ...b.quickSort()];
+};
