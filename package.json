@@ -2,7 +2,8 @@
   "name": "module1",
   "version": "1.0.0",
   "description": "",
-  "main": "src/JS_path/lessons/script_test.js",
+  "main": "src/JS_path/lessons/practice_file_1.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
